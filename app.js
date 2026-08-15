@@ -148,7 +148,7 @@ function adminLogin() {
         rl.question("Password: ", password => {
 
             if (username === "Admin" && password === "1234") {
-                adminModule.adminMenu();
+                adminMenu();
             } else {
                 console.log("Invalid admin login!");
                 start();
