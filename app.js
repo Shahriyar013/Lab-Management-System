@@ -165,7 +165,7 @@ function submitComplaint() {
 
     const complaints = read(COMPLAINT_FILE);
 
-    console.log("\n=== SUBMIT COMPLAINT ===");
+    console.log("\n====SUBMIT COMPLAINT ====");
 
     rl.question("Room Number: ", room => {
 
