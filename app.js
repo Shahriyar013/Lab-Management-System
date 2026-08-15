@@ -41,7 +41,7 @@ function start() {
         else if (choice === "3") adminLogin();
         else if (choice === "4") rl.close();
         else {
-            console.log("Invalid choice! please enter valid choice");
+            console.log("Invalid choice!");
             start();
         }
     });
@@ -148,7 +148,7 @@ function adminLogin() {
         rl.question("Password: ", password => {
 
             if (username === "Admin" && password === "1234") {
-                adminMenu();
+                adminModule.adminMenu();
             } else {
                 console.log("Invalid admin login!");
                 start();
@@ -253,7 +253,6 @@ function submitComplaint() {
                 });
             });
         });
-        
     });
 }
 
@@ -321,20 +320,18 @@ function adminMenu() {
                 break;
 
             default:
-                console.log("Invalid choice! Please Enter Valid choice");
+                console.log("Invalid choice!");
                 adminMenu();
         }
     });
 }
 
 
-<<<<<<< HEAD
-=======
 
 
 
 
-//ALL COMPLAINTS
+// ===== ALL COMPLAINTS =====
 
 function viewAll() {
 
@@ -367,7 +364,7 @@ function showComplaint(c) {
 }
 
 
-//PENDING COMPLAINTS
+// ===== PENDING COMPLAINTS =====
 
 function viewPending() {
 
@@ -388,137 +385,7 @@ function viewPending() {
     });
 }
 
-//UPDATE COMPLAINT 
-
-function updateComplaint() {
-
-    const complaints = read(COMPLAINT_FILE);
-
-    console.log("\n=== UPDATE COMPLAINT ===");
-
-    rl.question("Enter Complaint ID: ", (id) => {
-
-        id = id.trim();
-
-        const complaint = complaints.find(
-            c => c.id.toUpperCase() === id.toUpperCase()
-        );
-
-        if (!complaint) {
-            console.log("Complaint not found!");
-            return adminMenu();
-        }
-
-        console.log("\nCurrent Status:", complaint.status);
-
-        console.log("\n1. Pending");
-        console.log("2. In Progress");
-        console.log("3. Solved");
-
-        rl.question("New Status: ", (choice) => {
-
-            choice = choice.trim();
-
-            let status;
-
-            if (choice === "1") {
-                status = "Pending";
-            }
-            else if (choice === "2") {
-                status = "In Progress";
-            }
-            else if (choice === "3") {
-                status = "Solved";
-            }
-            else {
-                console.log("Invalid choice!");
-                return adminMenu();
-            }
-
-            complaint.status = status;
-
-            save(COMPLAINT_FILE, complaints);
-
-            console.log(
-                "\nComplaint updated successfully!"
-            );
-
-            console.log(
-                "New Status:",
-                complaint.status
-            );
-
-            rl.question(
-                "\nPress Enter to continue...",
-                () => {
-                    adminMenu();
-                }
-            );
-        });
-    });
-}
-
-//  START PROGRAM 
->>>>>>> a377aaae68646d99f4f7e9aaa2ee2c5b247d44ac
-
-
-
-
-//ALL COMPLAINTS
-
-function viewAll() {
-
-    const complaints = read(COMPLAINT_FILE);
-
-    console.log("\n=== ALL COMPLAINTS ===");
-
-    if (complaints.length === 0) {
-        console.log("No complaints.");
-    } else {
-        complaints.forEach(showComplaint);
-    }
-
-    rl.question("\nPress Enter to continue...", () => {
-        adminMenu();
-    });
-}
-
-function showComplaint(c) {
-
-    console.log("-----------------------");
-    console.log("ID:", c.id);
-    console.log("Student:", c.studentId);
-    console.log("Room:", c.room);
-  
-    
-    console.log("Problem:", c.problem);
-    console.log("Priority:", c.priority);
-    console.log("Status:", c.status);
-}
-
-
-//PENDING COMPLAINTS
-
-function viewPending() {
-
-    const complaints = read(COMPLAINT_FILE).filter(
-        c => c.status === "Pending"
-    );
-
-    console.log("\n=== PENDING COMPLAINTS ===");
-
-    if (complaints.length === 0) {
-        console.log("No pending complaints.");
-    } else {
-        complaints.forEach(showComplaint);
-    }
-
-    rl.question("\nPress Enter to continue...", () => {
-        adminMenu();
-    });
-}
-
-//UPDATE COMPLAINT 
+// ===== UPDATE COMPLAINT =====
 
 function updateComplaint() {
 
