@@ -1,3 +1,13 @@
 [
-    
+  {
+    "id": "C001",
+    "studentId": "242",
+    "room": "303",
+    "component": "mouse",
+    "componentId": "345",
+    "problem": "disconnected",
+    "priority": "Medium",
+    "status": "Pending",
+    "date": "8/15/2026, 3:10:07 PM"
+  }
 ]
