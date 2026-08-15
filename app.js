@@ -117,7 +117,7 @@ function login() {
 
 function studentMenu() {
 
-    console.log("\n=== STUDENT PANEL ===");
+    console.log("\n==== STUDENT PANEL ====");
     console.log("1. Submit Complaint");
     console.log("2. View My Complaints");
     console.log("3. Logout");
