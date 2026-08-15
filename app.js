@@ -25,7 +25,7 @@ const save = (file, data) =>
     fs.writeFileSync(file, JSON.stringify(data, null, 2));
 
 
-// ===== START MENU =====
+//START MENU
 
 function start() {
     console.log("\n=== UNIVERSITY LAB MANAGEMENT ===");
@@ -48,7 +48,7 @@ function start() {
 }
 
 
-// ===== SIGN UP =====
+//SIGN UP
 
 function signup() {
     const users = read(USER_FILE);
@@ -87,7 +87,7 @@ function signup() {
 }
 
 
-// ===== STUDENT LOGIN =====
+//STUDENT LOGIN
 
 function login() {
     const users = read(USER_FILE);
@@ -113,13 +113,7 @@ function login() {
     });
 }
 
-
-
-
-
-
-
-// ===== STUDENT MENU =====
+//STUDENT MENU
 
 function studentMenu() {
 
@@ -146,7 +140,7 @@ function studentMenu() {
 }
 
 
-// ===== SUBMIT COMPLAINT =====
+//SUBMIT COMPLAINT
 
 function submitComplaint() {
 
@@ -243,7 +237,7 @@ function submitComplaint() {
     });
 }
 
-// ===== MY COMPLAINTS =====
+//MY COMPLAINTS
 
 function myComplaints() {
 
