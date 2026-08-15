@@ -41,7 +41,7 @@ function start() {
         else if (choice === "3") adminLogin();
         else if (choice === "4") rl.close();
         else {
-            console.log("Invalid choice!");
+            console.log("Invalid choice! please enter valid choice");
             start();
         }
     });
@@ -320,7 +320,7 @@ function adminMenu() {
                 break;
 
             default:
-                console.log("Invalid choice!");
+                console.log("Invalid choice! Please Enter Valid choice");
                 adminMenu();
         }
     });
@@ -331,7 +331,7 @@ function adminMenu() {
 
 
 
-// ===== ALL COMPLAINTS =====
+//ALL COMPLAINTS
 
 function viewAll() {
 
@@ -364,7 +364,7 @@ function showComplaint(c) {
 }
 
 
-// ===== PENDING COMPLAINTS =====
+//PENDING COMPLAINTS
 
 function viewPending() {
 
@@ -385,7 +385,7 @@ function viewPending() {
     });
 }
 
-// ===== UPDATE COMPLAINT =====
+//UPDATE COMPLAINT 
 
 function updateComplaint() {
 
